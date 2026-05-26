@@ -1,0 +1,24 @@
+1. If I wanted to connect a new TABLE, lets say employees. 
+Do I just add a new class called Employees.cs and add what columnNames my table has and want to be used in a form?
+
+For a new table like Employees, you would:
+
+Add a new XPO class in ims.domain, for example:
+Employees.cs
+
+or better singular:
+
+Employee.cs
+Define the fields/properties you want stored as columns:
+FirstName
+LastName
+Phone
+Email
+Department
+HireDate
+HourlyRate
+Because it inherits from XPObject, XPO will create/update the SQLite table when the app starts.
+
+
+WinForms on .NET 10 is supported until November 14, 2028
+As long as .NET 10 is included
