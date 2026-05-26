@@ -13,18 +13,18 @@ namespace ims.data
             if (initialized)
                 return;
 
-            string databaseFile = Path.Combine(
-                AppDomain.CurrentDomain.BaseDirectory,
-                "ims-demo.db"
-            );
-
-            string connectionStringSqlServer =
+            string connectionString =
                 "XpoProvider=MSSqlServer;Server=(localdb)\\MSSQLLocalDB;Database=IMS;Trusted_Connection=True;TrustServerCertificate=True;";
 
+            // TO USE SQLITE, UNCOMMENT THE FOLLOWING LINES AND COMMENT OUT THE SQL SERVER CONNECTION STRING ABOVE
+            //string databaseFile = Path.Combine(
+            //    AppDomain.CurrentDomain.BaseDirectory,
+            //    "ims-demo.db"
+            //);
             //string connectionString = SQLiteConnectionProvider.GetConnectionString(databaseFile);
 
             XpoDefault.DataLayer = XpoDefault.GetDataLayer(
-                connectionStringSqlServer,
+                connectionString,
                 AutoCreateOption.DatabaseAndSchema
             );
 
